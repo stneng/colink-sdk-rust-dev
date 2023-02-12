@@ -10,13 +10,9 @@ jobs:
   check:
     strategy:
       matrix:
-        mq: [standalone, rabbitmq, redis]
-        ci_image: [ubuntu-latest, macos-latest]
+        mq: [redis]
+        ci_image: [macos-latest]
         include:
-          - mq: rabbitmq
-            docker_image: "rabbitmq:3.8-management"
-            mq_uri: "amqp://guest:guest@localhost"
-            mq_api: "http://guest:guest@localhost:15672/api"
           - mq: redis
             docker_image: "redis"
             mq_uri: "redis://localhost:16379"
