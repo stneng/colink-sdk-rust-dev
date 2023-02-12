@@ -15,7 +15,7 @@ jobs:
         include:
           - mq: redis
             docker_image: "redis"
-            mq_uri: "redis://localhost:16379"
+            mq_uri: "redis://127.0.0.1:16379"
     runs-on: ${{ matrix.ci_image }}
     defaults:
       run:
