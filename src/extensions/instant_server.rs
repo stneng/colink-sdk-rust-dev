@@ -92,6 +92,7 @@ impl InstantServer {
                             }
                         } else if mq_uri.starts_with("redis") {
                             let client = redis::Client::open(mq_uri).unwrap();
+                            println!("{}",mq_uri);
                             let _con = client.get_async_connection().await.unwrap();
                         } else {
                             panic!("mq_uri({}) is not supported.", mq_uri);
